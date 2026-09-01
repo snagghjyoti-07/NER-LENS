@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
-import { 
-  LayoutGrid, TriangleAlert, BrainCircuit, History, 
-  LifeBuoy, Radio, Activity, BarChart2, Bell, 
-  FileText, ShieldCheck, Network, Globe, 
-  Siren, AlertTriangle, User, LogOut,
-  Menu, X
+import React, { useState, useEffect } from 'react';
+import {
+  Globe,
+  Mountain,
+  LayoutGrid,
+  TriangleAlert,
+  BrainCircuit,
+  History,
+  LifeBuoy,
+  Radio,
+  Activity,
+  BarChart2,
+  Bell,
+  FileText,
+  ShieldCheck,
+  Network,
+  Menu,
+  X,
+  Languages,
+  ChevronDown,
+  Volume2,
+  VolumeX,
+  AlertTriangle,
+  Siren,
+  User,
+  LogOut,
+  Sparkles
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { LANGUAGES } from '../lib/i18n';
@@ -23,7 +43,8 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
   const [simulatedOffline, setSimulatedOffline] = useState<boolean>(false);
 
   const NAV_ITEMS = [
-    { id: 'dashboard', label: t('dashboard') || 'Dashboard', icon: LayoutGrid },
+    { id: 'landing', label: 'Home Overview', icon: Mountain },
+    { id: 'dashboard', label: t('dashboard') || 'Command Center', icon: LayoutGrid },
     { id: 'warnings', label: t('warnings') || 'Early Warnings', icon: TriangleAlert },
     { id: 'prediction', label: t('prediction') || 'AI Prediction', icon: BrainCircuit },
     { id: 'replay', label: t('replay') || 'Event Replay', icon: History },
@@ -161,7 +182,7 @@ export const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children })
           <div>
             {/* Brand Header with Custom Logo */}
             <div 
-              onClick={() => setActiveTab('dashboard')}
+              onClick={() => setActiveTab('landing')}
               className="px-4 py-3.5 cursor-pointer border-b border-white/[0.04] flex items-center space-x-3 hover:bg-white/[0.02] transition-colors"
             >
               <AppLogo size="sm" />

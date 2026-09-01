@@ -303,7 +303,7 @@ let oscillator: OscillatorNode | null = null;
 let gainNode: GainNode | null = null;
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState<string>('dashboard');
+  const [activeTab, setActiveTab] = useState<string>('landing');
   const [selectedLocationId, setSelectedLocationId] = useState<string>('mangan-ridge');
   const [lang, setLangState] = useState<string>(() => localStorage.getItem('ews_lang') || 'en');
   const [network, setNetwork] = useState<'online' | 'offline'>('online');
